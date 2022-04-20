@@ -1,18 +1,48 @@
 <?php
 class Worker{
-	public $name;
-	public $age;
-	public $salary;
+	private $name;
+	private $age;
+	private $salary;
+	public function setName($n){
+	    $this->name= $n;
+	}
+    public function getName(){
+	    return $this->name;
+    }
+    public function setAge($a){
+	    $this->age= $a;
+    }
+    public function getAge(){
+	    return $this->age;
+    }
+    public function setSalary($s){
+	    $this->salary= $s;
+    }
+    public function getSalary(){
+	    return $this->salary;
+    }
+	private function checkAge($q) {
+        if ($q >= 1 && $q <= 100) {
+                return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+ 
 }
 $obj =new Worker();
-$obj->name="Ivan";
-$obj->age=21;
-$obj->salary=1000;
+$obj->setName("Ivan");
+$obj->setAge(21);
+$obj->setSalary(1000);
  
 $obj2 =new Worker();
-$obj2->name="Vanya";
-$obj2->age=20;
-$obj2->salary=2000;
-echo "Summa age", $obj->age + $obj2->age;
+$obj2->setName("Ivan");
+$obj2->setAge(21);
+$obj2->setSalary(1000);
+
+
+echo "Summa age", $obj->getAge() + $obj2->getAge();
 echo "<br>";
-echo "summa salary", $obj->salary+$obj2->salary;
+echo "summa salary", $obj->getSalary()+$obj2->getSalary();
